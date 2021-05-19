@@ -26,11 +26,12 @@ class FirstFragment : Fragment() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
+        when (item.itemId) {
             R.id.action_top5->true
             R.id.action_lista-> findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             else -> super.onOptionsItemSelected(item)
         }
+        return true
     }
 
 }
