@@ -1,10 +1,9 @@
-package com.example.ejercicio14
+package com.example.proyectoandroid
 
 import android.os.Bundle
+import android.provider.MediaStore
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -13,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.proyectoandroid.Adaptador
+import com.example.proyectoandroid.MainActivity
 import com.example.proyectoandroid.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
@@ -32,14 +32,13 @@ class SecondFragment : Fragment() {
         miRecyclerView=rootView.findViewById(R.id.frag2_recyclerView)
         miRecyclerView.layoutManager= LinearLayoutManager(activity)
 
-        (activity as MainActivity).miViewModel.allPeliculas.observe(activity as MainActivity, Observer { Pelicula ->
-            Pelicula?.let {
+        (activity as MainActivity).miViewModel.allVideojuego.observe(activity as MainActivity, Observer { Videojuego ->
+            Videojuego?.let {
                 miRecyclerView.adapter= Adaptador(it, activity as MainActivity)
             }
         })
 
         return rootView
-
 
     }
 
@@ -50,7 +49,19 @@ class SecondFragment : Fragment() {
             findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment)
         }
     }
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.action_top5)?.isVisible=true
+        menu.findItem(R.id.action_lista)?.isVisible=true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_top5->findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            R.id.action_lista-> true
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 
 

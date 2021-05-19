@@ -1,4 +1,4 @@
-package com.example.ejercicio14
+package com.example.proyectoandroid
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.proyectoandroid.BaseDatos
 import com.example.proyectoandroid.R
 import com.example.proyectoandroid.Repositorio
@@ -33,9 +35,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_top5-> true
+            R.id.action_lista-> true
             else -> super.onOptionsItemSelected(item)
         }
     }
-
 }

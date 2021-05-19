@@ -1,16 +1,15 @@
 package com.example.proyectoandroid
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.view.isInvisible
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
-import com.example.ejercicio14.MainActivity
+import com.example.proyectoandroid.MainActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class ThirdFragment : Fragment() {
@@ -81,9 +80,27 @@ class ThirdFragment : Fragment() {
             findNavController().navigate(R.id.action_thirdFragment_to_SecondFragment)
 
         }
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<FloatingActionButton>(R.id.anyadir).setOnClickListener {
+            findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment)
+        }
 
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.action_top5)?.isVisible=true
+        menu.findItem(R.id.action_lista)?.isVisible=true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_top5->findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            R.id.action_lista-> findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 
 }
 

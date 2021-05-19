@@ -7,7 +7,7 @@ import java.lang.IllegalArgumentException
 
 class VM(private val miRepositorio: Repositorio): ViewModel(){
 
-   val allPeliculas: LiveData<List<Videojuego>> = miRepositorio.listaPeliculas.asLiveData()
+   val allVideojuego: LiveData<List<Videojuego>> = miRepositorio.listaVideojuegos.asLiveData()
     lateinit var miVideojuego:LiveData<Videojuego>
 
     fun Insertar(miVideojuego: Videojuego) = viewModelScope.launch{

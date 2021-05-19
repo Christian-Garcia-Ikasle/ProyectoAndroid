@@ -36,7 +36,7 @@ class Adaptador(var listaVideojuegos:List<Videojuego>, val actividad: Activity):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvId.text=listaVideojuegos[position].id.toString()
         holder.tvTitulo.text=listaVideojuegos[position].titulo
-        holder.tvValoracion.text=String.format("Genero: ${listaVideojuegos[position].valoracion}")
+        holder.tvValoracion.text=String.format("Valoracion: ${listaVideojuegos[position].valoracion}")
         holder.Nota=listaVideojuegos[position].nota
         holder.posicion = listaVideojuegos[position].id
     }
