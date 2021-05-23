@@ -48,6 +48,8 @@ class SecondFragment : Fragment() {
         view.findViewById<FloatingActionButton>(R.id.anyadir).setOnClickListener {
             findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment)
         }
+        setHasOptionsMenu(true)
+        activity?.setTitle("Lista completa")
     }
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
