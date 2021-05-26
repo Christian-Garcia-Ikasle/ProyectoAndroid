@@ -82,10 +82,6 @@ class ThirdFragment : Fragment() {
         }
         super.onViewCreated(view, savedInstanceState)
 
-        view.findViewById<FloatingActionButton>(R.id.anyadir).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_thirdFragment)
-        }
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
