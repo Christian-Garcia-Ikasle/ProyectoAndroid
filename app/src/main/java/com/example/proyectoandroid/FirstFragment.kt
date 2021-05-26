@@ -23,9 +23,10 @@ class FirstFragment : Fragment() {
         miRecyclerView=rootView.findViewById(R.id.frag1_recyclerView)
         miRecyclerView.layoutManager= LinearLayoutManager(activity)
 
+        (activity as MainActivity).miViewModel.top()
         (activity as MainActivity).miViewModel.allVideojuego.observe(activity as MainActivity, Observer { Videojuego ->
             Videojuego?.let {
-                miRecyclerView.adapter= Adaptador(it, activity as MainActivity)
+                miRecyclerView.adapter= Adaptador(it, activity as MainActivity,1)
             }
         })
 
