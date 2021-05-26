@@ -25,7 +25,7 @@ class DAO {
         fun MostrarTodas(): Flow<List<Videojuego>>
 
         @Query("SELECT * FROM tabla_videojuegos ORDER BY nota DESC")
-        fun Top5(): Flow<List<Videojuego>>
+        fun top(): Flow<List<Videojuego>>
 
     }
 }

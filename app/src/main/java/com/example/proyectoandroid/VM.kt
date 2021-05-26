@@ -7,7 +7,7 @@ import java.lang.IllegalArgumentException
 
 class VM(private val miRepositorio: Repositorio): ViewModel(){
 
-   val allVideojuego: LiveData<List<Videojuego>> = miRepositorio.listaVideojuegos.asLiveData()
+   var allVideojuego: LiveData<List<Videojuego>> = miRepositorio.listaVideojuegos.asLiveData()
     lateinit var miVideojuego:LiveData<Videojuego>
 
     fun Insertar(miVideojuego: Videojuego) = viewModelScope.launch{
@@ -16,6 +16,13 @@ class VM(private val miRepositorio: Repositorio): ViewModel(){
 
     fun BuscarPorId (id:Int) = viewModelScope.launch {
         miVideojuego = miRepositorio.BuscarPorId(id).asLiveData()
+    }
+    fun top() = viewModelScope.launch {
+        allVideojuego = miRepositorio.top().asLiveData()
+    }
+
+    fun todos() = viewModelScope.launch {
+        allVideojuego = miRepositorio.todos().asLiveData()
     }
 
     fun Borrar(miVideojuego: Videojuego) = viewModelScope.launch {

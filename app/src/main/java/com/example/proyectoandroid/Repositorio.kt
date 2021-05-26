@@ -17,6 +17,14 @@ class Repositorio (val miDAO: DAO.VideojuegoDAO){
        return miDAO.BuscarPorId(id)
     }
 
+    fun top():Flow<List<Videojuego>>{
+        return miDAO.top()
+    }
+
+    fun todos():Flow<List<Videojuego>>{
+        return miDAO.MostrarTodas()
+    }
+
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun Borrar(miVideojuego: Videojuego){

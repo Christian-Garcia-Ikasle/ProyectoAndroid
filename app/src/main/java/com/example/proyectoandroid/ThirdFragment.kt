@@ -14,8 +14,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ThirdFragment : Fragment() {
 
-
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -34,6 +32,7 @@ class ThirdFragment : Fragment() {
         var miVideojuego = Videojuego(titulo = "",valoracion = "",nota = 0)
 
         val id:Int=arguments?.getInt("id") ?:-1
+
         if (id == -1) {
             view.findViewById<Button>(R.id.frag3_modificar).isInvisible = true
             view.findViewById<Button>(R.id.frag3_borrar).isInvisible = true
@@ -47,7 +46,7 @@ class ThirdFragment : Fragment() {
                 miVideojuego = it
                 view.findViewById<EditText>(R.id.frag3_Titulo).setText(it.titulo)
                 view.findViewById<EditText>(R.id.frag3_Valoracion).setText(it.valoracion)
-                view.findViewById<EditText>(R.id.frag3_nota).setText(it.nota)
+                view.findViewById<EditText>(R.id.frag3_nota).setText(it.nota.toString())
                 }
             }
 
@@ -58,8 +57,12 @@ class ThirdFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.frag3_modificar).setOnClickListener{
-
-            (activity as MainActivity).miViewModel.Actualizar(miVideojuego)
+            if (titulo.text == null || valoracion.text == null || nota.text == null){
+                findNavController().navigate(R.id.action_thirdFragment_to_SecondFragment)
+            }
+            else{
+                (activity as MainActivity).miViewModel.Actualizar(Videojuego(id = id,titulo = titulo.text.toString(),valoracion = valoracion.text.toString(),nota = nota.text.toString().toInt()))
+            }
 
             findNavController().navigate(R.id.action_thirdFragment_to_SecondFragment)
 
@@ -74,14 +77,16 @@ class ThirdFragment : Fragment() {
         }
 
         view.findViewById<Button>(R.id.frag3_insertar).setOnClickListener{
-
-            (activity as MainActivity).miViewModel.Insertar(Videojuego(titulo = titulo.text.toString(),valoracion = valoracion.text.toString(),nota = nota.text.toString().toInt()) )
-
+            if (titulo.text == null || valoracion.text == null || nota.text == null){
+                findNavController().navigate(R.id.action_thirdFragment_to_SecondFragment)
+            }
+            else{
+                (activity as MainActivity).miViewModel.Insertar(Videojuego(titulo = titulo.text.toString(),valoracion = valoracion.text.toString(),nota = nota.text.toString().toInt()) )
+            }
             findNavController().navigate(R.id.action_thirdFragment_to_SecondFragment)
 
         }
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

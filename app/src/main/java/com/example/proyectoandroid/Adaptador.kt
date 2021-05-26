@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView
 class Adaptador(var listaVideojuegos:List<Videojuego>, val actividad: Activity):RecyclerView.Adapter<Adaptador.ViewHolder>() {
     inner class ViewHolder (v: View):RecyclerView.ViewHolder(v){
         var tvTitulo: TextView
-        var Nota:Int
+        var Nota:TextView
         var posicion:Int = 0
         init{
             tvTitulo=v.findViewById(R.id.item_tvTitulo)
-            Nota = 0
+            Nota = v.findViewById(R.id.item_tvNota)
             v.setOnClickListener{
                 val bundle= bundleOf("id" to this.posicion)
                 actividad.findNavController(R.id.nav_host_fragment).navigate(R.id.action_SecondFragment_to_thirdFragment, bundle)
@@ -31,7 +31,7 @@ class Adaptador(var listaVideojuegos:List<Videojuego>, val actividad: Activity):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.tvTitulo.text=listaVideojuegos[position].titulo
-        holder.Nota=listaVideojuegos[position].nota
+        holder.Nota.text=listaVideojuegos[position].nota.toString()
         holder.posicion = listaVideojuegos[position].id
     }
 

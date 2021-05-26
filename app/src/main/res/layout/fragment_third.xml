@@ -8,77 +8,76 @@
 
     <EditText
         android:id="@+id/frag3_Valoracion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
-        android:layout_marginEnd="6dp"
+        android:layout_width="209dp"
+        android:layout_height="205dp"
+        android:layout_marginEnd="48dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Valoracion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView16"
-        app:layout_constraintTop_toBottomOf="@+id/frag3_Titulo" />
+        android:hint="Valoracion"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/frag3_insertar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="58dp"
+        android:layout_marginTop="31dp"
         android:text="Insertar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_modificar" />
 
     <Button
         android:id="@+id/frag3_borrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="58dp"
+        android:layout_marginBottom="31dp"
         android:text="Borrar"
-        app:layout_constraintBaseline_toBaselineOf="@+id/frag3_modificar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/frag3_insertar"
+        app:layout_constraintStart_toEndOf="@+id/frag3_insertar" />
 
     <EditText
         android:id="@+id/frag3_Titulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="43dp"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="39dp"
         android:ems="10"
+        android:hint="Titulo"
         android:inputType="textPersonName"
-        android:text="Titulo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/frag3_Valoracion"
+        app:layout_constraintEnd_toEndOf="@+id/frag3_Valoracion"
+        app:layout_constraintStart_toStartOf="@+id/frag3_Valoracion" />
 
     <Button
         android:id="@+id/frag3_modificar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginBottom="183dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="38dp"
         android:text="Modificar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag3_nota" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_marginStart="55dp"
+        android:layout_marginBottom="11dp"
         android:text="Titulo"
-        app:layout_constraintEnd_toEndOf="@+id/textView16"
-        app:layout_constraintStart_toStartOf="@+id/textView16"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/frag3_Titulo"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="11dp"
+        android:layout_marginTop="326dp"
+        android:layout_marginEnd="31dp"
         android:text="Valoracion"
-        app:layout_constraintBaseline_toBaselineOf="@+id/frag3_Valoracion"
         app:layout_constraintEnd_toStartOf="@+id/frag3_Valoracion"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView17"
@@ -93,12 +92,12 @@
         android:id="@+id/frag3_nota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="1dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Nota"
+        android:hint="nota"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="@+id/frag3_Valoracion"
-        app:layout_constraintStart_toStartOf="@+id/frag3_Valoracion"
         app:layout_constraintTop_toBottomOf="@+id/frag3_Valoracion" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

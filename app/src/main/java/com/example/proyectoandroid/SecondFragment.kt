@@ -37,9 +37,7 @@ class SecondFragment : Fragment() {
                 miRecyclerView.adapter= Adaptador(it, activity as MainActivity)
             }
         })
-
         return rootView
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
