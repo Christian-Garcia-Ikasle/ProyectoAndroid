@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.proyectoandroid.MainActivity">
     <item
-        android:id="@+id/action_top5"
+        android:id="@+id/action_top"
         android:orderInCategory="100"
-        android:title="Top 5"
+        android:title="Top"
         app:showAsAction="never" />
 
     <item

@@ -16,7 +16,7 @@ import com.example.proyectoandroid.VM
 
 class MainActivity : AppCompatActivity() {
 
-    val miViewModel: VM by viewModels {VM.PeliculaViewModelFactory(miRepositorio)}
+    val miViewModel: VM by viewModels {VM.VideojuegoViewModelFactory(miRepositorio)}
     val database by lazy { BaseDatos.getDatabase(this)}
     val miRepositorio by lazy { Repositorio(database.miDAO()) }
 
@@ -33,11 +33,8 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_top5-> true
-            R.id.action_lista-> true
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
+
+   /* public boolean in night mode enabled(){
+        this.isNightModeEnabled;
+    }*/
 }

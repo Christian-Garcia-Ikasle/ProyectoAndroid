@@ -86,7 +86,7 @@ class ThirdFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_top5->findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            R.id.action_top->findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             R.id.action_lista-> findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             else -> super.onOptionsItemSelected(item)
         }

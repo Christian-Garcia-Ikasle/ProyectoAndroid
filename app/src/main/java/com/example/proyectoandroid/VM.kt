@@ -26,7 +26,7 @@ class VM(private val miRepositorio: Repositorio): ViewModel(){
         miRepositorio.Actualizar(miVideojuego)
     }
 
-    class PeliculaViewModelFactory(private val repository: Repositorio) : ViewModelProvider.Factory{
+    class VideojuegoViewModelFactory(private val repository: Repositorio) : ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(VM::class.java)){
                 @Suppress("UNCHECKED_CAST")

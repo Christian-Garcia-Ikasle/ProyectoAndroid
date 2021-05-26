@@ -41,12 +41,12 @@ class FirstFragment : Fragment() {
         }
 
         setHasOptionsMenu(true)
-        activity?.setTitle("Mi top 5")
+        activity?.setTitle("Mi top")
     }
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        menu.findItem(R.id.action_top5)?.isVisible=true
+        menu.findItem(R.id.action_top)?.isVisible=true
         menu.findItem(R.id.action_lista)?.isVisible=true
     }
 
@@ -56,7 +56,7 @@ class FirstFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_top5->true
+            R.id.action_top->true
             R.id.action_lista-> findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
             else -> super.onOptionsItemSelected(item)
         }

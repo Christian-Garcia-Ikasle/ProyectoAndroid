@@ -53,13 +53,13 @@ class SecondFragment : Fragment() {
     }
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        menu.findItem(R.id.action_top5)?.isVisible=true
+        menu.findItem(R.id.action_top)?.isVisible=true
         menu.findItem(R.id.action_lista)?.isVisible=true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_top5->findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            R.id.action_top->findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
             R.id.action_lista-> true
             else -> super.onOptionsItemSelected(item)
         }
