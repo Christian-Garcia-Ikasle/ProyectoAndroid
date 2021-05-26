@@ -47,7 +47,7 @@ class ThirdFragment : Fragment() {
                 miVideojuego = it
                 view.findViewById<EditText>(R.id.frag3_Titulo).setText(it.titulo)
                 view.findViewById<EditText>(R.id.frag3_Valoracion).setText(it.valoracion)
-                nota.setText(it.nota)
+                view.findViewById<EditText>(R.id.frag3_nota).setText(it.nota)
                 }
             }
 
