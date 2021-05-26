@@ -31,10 +31,11 @@ class SecondFragment : Fragment() {
 
         miRecyclerView=rootView.findViewById(R.id.frag2_recyclerView)
         miRecyclerView.layoutManager= LinearLayoutManager(activity)
+        (activity as MainActivity).miViewModel.todos()
 
         (activity as MainActivity).miViewModel.allVideojuego.observe(activity as MainActivity, Observer { Videojuego ->
             Videojuego?.let {
-                miRecyclerView.adapter= Adaptador(it, activity as MainActivity)
+                miRecyclerView.adapter= Adaptador(it, activity as MainActivity,2)
             }
         })
         return rootView

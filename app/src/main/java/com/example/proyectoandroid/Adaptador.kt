@@ -9,7 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(var listaVideojuegos:List<Videojuego>, val actividad: Activity):RecyclerView.Adapter<Adaptador.ViewHolder>() {
+class Adaptador(var listaVideojuegos:List<Videojuego>, val actividad: Activity, val vista:Int):RecyclerView.Adapter<Adaptador.ViewHolder>() {
     inner class ViewHolder (v: View):RecyclerView.ViewHolder(v){
         var tvTitulo: TextView
         var Nota:TextView
@@ -18,8 +18,14 @@ class Adaptador(var listaVideojuegos:List<Videojuego>, val actividad: Activity):
             tvTitulo=v.findViewById(R.id.item_tvTitulo)
             Nota = v.findViewById(R.id.item_tvNota)
             v.setOnClickListener{
-                val bundle= bundleOf("id" to this.posicion)
-                actividad.findNavController(R.id.nav_host_fragment).navigate(R.id.action_SecondFragment_to_thirdFragment, bundle)
+                if (vista == 1){
+                    val bundle= bundleOf("id" to this.posicion)
+                    actividad.findNavController(R.id.nav_host_fragment).navigate(R.id.action_FirstFragment_to_thirdFragment, bundle)
+                }else if (vista == 2) {
+                    val bundle = bundleOf("id" to this.posicion)
+                    actividad.findNavController(R.id.nav_host_fragment)
+                        .navigate(R.id.action_SecondFragment_to_thirdFragment, bundle)
+                }
             }
         }
     }
